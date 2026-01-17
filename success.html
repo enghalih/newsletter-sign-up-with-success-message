@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <link rel="stylesheet" href="./public/success.css">
+  <!-- <script defer src="./public/success.js"></script> -->
+
+</head>
+<body>
+  <main class="card">
+    <div class="content">
+      <img class="icon-success" src="assets/images/icon-success.svg" alt="">
+      <h1 class="card-title">Thanks for subscribing!</h1>
+      <p class="card-description">A confirmation email has been sent to <b id="email">ash@loremcompany.com</b>. Please open it and click the button inside to confirm your subscription.</p>
+    </div>
+    <a type="button" class="form-button" href="index.html">Dismiss message</a>
+  </main>
+</body>
+
+<script>
+  document.getElementById('email').innerHTML = sessionStorage.getItem('email');
+</script>
+</html>

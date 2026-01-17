@@ -1,0 +1,58 @@
+@import "basic";
+
+body {
+  background-color: $white;
+}
+
+.card {
+  padding: 7rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-button {
+  margin-top: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: space(400);
+  margin-top: calc(15rem - 7rem);
+}
+
+.icon-success {
+  width: 6.4rem;
+  aspect-ratio: 1/1;
+}
+
+.card-title {
+  @extend %text-1-bold;
+}
+
+.card-description {
+  @extend %text-2;
+}
+
+@media (min-width: 48rem) {
+  body {
+    background-color: $blue-700;
+  }
+
+  .card {
+    background-color: $white;
+    border-radius: 36px;
+    padding: space(800);
+    gap: space(400);
+    max-width: 50rem;
+  }
+
+  .content {
+    margin-top: 0;
+  }
+
+  .form-button {
+    margin-top: 0;
+  }
+}

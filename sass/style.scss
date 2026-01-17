@@ -1,0 +1,152 @@
+@import 'basic';
+
+.card {
+  background-color: $white;
+}
+
+.content {
+  padding: space(500) space(300) space(500);
+  display: flex;
+  flex-direction: column;
+  gap: space(300);
+}
+
+.image img {
+  width: 100%;
+}
+
+.form-subscribe {
+  margin-top: space(200);
+  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: space(300);
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: space(100);
+}
+
+.card-title {
+  @extend %text-1-bold;
+}
+
+.card-description {
+  @extend %text-2;
+}
+.card-benefits {
+  @extend %text-2;
+  list-style: none;
+  padding-left: 0;
+}
+.card-benefit {
+  display: flex;
+  gap: 1.6rem;
+  align-items:start;
+}
+.card-benefit::before {
+  content: url("../assets/images/icon-list.svg");
+}
+
+.input-label {
+  @extend %text-3-bold;
+}
+.input-error {
+  @extend %text-3-bold;
+  text-align: end;
+  display: none
+}
+.input {
+  @extend %text-2;
+  padding: space(200) space(300);
+  grid-column: span 3;
+  border-radius: 8px;
+  border: 1px solid $gray;
+}
+.input::placeholder {
+  color: $gray;
+}
+
+.image-desktop, .image-tablet {
+  display: none;
+}
+
+// Error Mode
+
+.input-group.error .input-error{
+  display: block;
+  color: $red;
+}
+
+.input-group.error .input {
+  background-color: $red-bg;
+  color:$red;
+}
+
+.input-group.error .input::placeholder {
+  color: rgb(255, 183, 178);
+}
+
+
+@media (min-width: 48rem) {
+  // min width 768px
+
+  .card {
+    width: fit-content;
+    margin: auto;
+    border-radius: 36px;
+    padding: space(500);
+  }
+
+  .content {
+    margin-top: space(500);
+    padding: 0;
+  }
+
+  .image-tablet {
+    display: block;
+  }
+
+  .image-mobile {
+    display: none;
+  }
+
+  .form-subscribe {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 90rem) {
+  // min width 1440px
+
+  .image-desktop {
+    display: block;
+  }
+
+  .image-tablet {
+    display: none;
+  }
+
+  .card {
+    display: flex;
+    padding: space(400);
+    gap: space(800);
+    align-items: center;
+  }
+
+  .content {
+    gap: space(400);
+    margin: 0;
+  }
+
+  .image {
+    order: 2;
+  }
+
+  .image img {
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,180 @@
+@use "sass:map";
+
+$white: #fff;
+$gray: #949494;
+$blue-800: #242742;
+$blue-700: #36384d;
+$red: #ff6155;
+$red-bg: hsla(2, 100%, 95%, 1);
+$gradient: linear-gradient(
+  90deg,
+  rgba(255, 106, 58, 1) 0%,
+  rgba(255, 82, 123, 1) 100%
+);
+$spacings: (
+  100: 0.8rem,
+  200: 1.6rem,
+  300: 2.4rem,
+  400: 3.2rem,
+  500: 4.0rem,
+  600: 4.8rem,
+  800: 6.4rem,
+  900: 7.2rem,
+  1300: 10.4rem,
+);
+
+%text-1-bold {
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+%text-2-bold {
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+%text-2 {
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+%text-3-bold {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+@function space($key) {
+  @return map.get($spacings, $key);
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+html {
+  font-size: 62.5%;
+  min-height: 100vh;
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", sans-serif;
+  background-color: $blue-700;
+  color: $blue-800;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+.form-button {
+  @extend %text-2-bold;
+  color: white;
+  background-color: $blue-800;
+  padding: space(200) space(600);
+  border-radius: 8px;
+  text-wrap: nowrap;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+}
+
+.form-button:active {
+  background: $gradient;
+}
+
+
+@media (min-width: 48rem) {
+  // min width 768px
+
+  %text-1-bold {
+    font-size: 5.6rem;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+  }
+
+}

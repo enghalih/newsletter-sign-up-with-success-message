@@ -1,0 +1,270 @@
+.card-title {
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.form-button {
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.input, .card-benefits, .card-description {
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.input-error, .input-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+html {
+  font-size: 62.5%;
+  min-height: 100vh;
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", sans-serif;
+  background-color: #36384d;
+  color: #242742;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+.form-button {
+  color: white;
+  background-color: #242742;
+  padding: 1.6rem 4.8rem;
+  border-radius: 8px;
+  text-wrap: nowrap;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+}
+
+.form-button:active {
+  background: linear-gradient(90deg, rgb(255, 106, 58) 0%, rgb(255, 82, 123) 100%);
+}
+
+@media (min-width: 48rem) {
+  .card-title {
+    font-size: 5.6rem;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+  }
+}
+.card {
+  background-color: #fff;
+}
+
+.content {
+  padding: 4rem 2.4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.image img {
+  width: 100%;
+}
+
+.form-subscribe {
+  margin-top: 1.6rem;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.card-benefits {
+  list-style: none;
+  padding-left: 0;
+}
+
+.card-benefit {
+  display: flex;
+  gap: 1.6rem;
+  align-items: start;
+}
+
+.card-benefit::before {
+  content: url("../assets/images/icon-list.svg");
+}
+
+.input-error {
+  text-align: end;
+  display: none;
+}
+
+.input {
+  padding: 1.6rem 2.4rem;
+  grid-column: span 3;
+  border-radius: 8px;
+  border: 1px solid #949494;
+}
+
+.input::placeholder {
+  color: #949494;
+}
+
+.image-desktop, .image-tablet {
+  display: none;
+}
+
+.input-group.error .input-error {
+  display: block;
+  color: #ff6155;
+}
+
+.input-group.error .input {
+  background-color: hsl(2, 100%, 95%);
+  color: #ff6155;
+}
+
+.input-group.error .input::placeholder {
+  color: rgb(255, 183, 178);
+}
+
+@media (min-width: 48rem) {
+  .card {
+    width: fit-content;
+    margin: auto;
+    border-radius: 36px;
+    padding: 4rem;
+  }
+  .content {
+    margin-top: 4rem;
+    padding: 0;
+  }
+  .image-tablet {
+    display: block;
+  }
+  .image-mobile {
+    display: none;
+  }
+  .form-subscribe {
+    margin-top: 0;
+  }
+}
+@media (min-width: 90rem) {
+  .image-desktop {
+    display: block;
+  }
+  .image-tablet {
+    display: none;
+  }
+  .card {
+    display: flex;
+    padding: 3.2rem;
+    gap: 6.4rem;
+    align-items: center;
+  }
+  .content {
+    gap: 3.2rem;
+    margin: 0;
+  }
+  .image {
+    order: 2;
+  }
+  .image img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

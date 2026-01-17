@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <link rel="stylesheet" href="./public/style.css">
+  <script defer src="./public/script.js"></script>
+
+</head>
+<body>
+  <main class="card">
+    <div class="image">
+      <img class="image-mobile" src="assets/images/illustration-sign-up-mobile.svg" alt="">
+      <img class="image-desktop" src="assets/images/illustration-sign-up-desktop.svg" alt="">
+      <img class="image-tablet" src="assets/images/illustration-sign-up-tablet.svg" alt="">
+    </div>
+    <div class="content">
+      <h1 class="card-title">Stay Updated!</h1>
+      <p class="card-description">Join 60,000+ product managers receiving monthly updates on:</p>
+      <ul class="card-benefits">
+        <li class="card-benefit">Product discovery and building what matters</li>
+        <li class="card-benefit">Measuring to ensure updates are a success</li>
+        <li class="card-benefit">And much more!</li>
+      </ul>
+      <form id="form-subscribe" class="form-subscribe">
+        <div class="input-group">
+          <label for="email" class="input-label">Email address</label>
+          <p class="input-error" id="input-error">Valid email required</p>
+          <input type="text" id="email" name="email" class="input" placeholder="email@company.com">
+        </div>
+        <button type="submit" class="form-button">Subscribe to monthly newsletter</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
